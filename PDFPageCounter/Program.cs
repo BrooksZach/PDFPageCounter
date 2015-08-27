@@ -14,12 +14,21 @@ namespace PDFPageCounter
         public Dictionary<string, int> pageCount = new Dictionary<string, int>();
         static void Main(string[] args)
         {
+            /*
             DateTime Start = new DateTime(2015, 7, 01);
             DateTime End =  new DateTime(2015, 7, 02);
             DataTable PDFs = SQLHandler.getListOfPDFs(Start, End);
 
             Console.WriteLine(PDFs.Rows[0].ItemArray[0]);
             Console.ReadKey();
+             * **/
+
+            Console.WriteLine("Enter the fullpath of a pdf file: ");
+            string fullFilePath = Console.ReadLine();
+            PageCounter counter = new PageCounter();
+            Console.WriteLine(counter.CountPages(fullFilePath));
+            Console.ReadKey();
+
         }
     }
 }
